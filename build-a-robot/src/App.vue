@@ -1,30 +1,32 @@
 <template>
   <div id="app">
-    Root foo: {{rootFoo}}<br/>
-    Robots foo: {{robotsFoo}}<br/>
-    Users foo: {{usersFoo}}<br/>
-    <br/>
-    Root getters foo: {{rootGetterFoo}}<br/>
-    Robots getters foo: {{robotsGetterFoo}}<br/>
+    <div>
+      <!-- Root foo: {{ rootFoo }}<br />
+      Robots foo: {{ robotsFoo }}<br />
+      Users foo: {{ usersFoo }}<br />
+      <br />
+      Root getters foo: {{ rootGetterFoo }}<br />
+      Robots getters foo: {{ robotsGetterFoo }}<br /> -->
+    </div>
+
     <header>
       <nav>
         <ul>
           <li class="nav-item">
-            <router-link class="nav-link" :to="{name:'Home'}" exact>
+            <router-link class="nav-link" :to="{ name: 'Home' }" exact>
               <img src="./assets/build-a-bot-logo.png" class="logo" />
               Home
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" :to="{name:'Build'}" exact>Build</router-link>
+            <router-link class="nav-link" :to="{ name: 'Build' }" exact>Build</router-link>
           </li>
-         <li class="nav-item cart">
-            <router-link class="nav-link" :to="{name:'Cart'}" exact>Cart</router-link>
+          <li class="nav-item cart">
+            <router-link class="nav-link" :to="{ name: 'Cart' }" exact>Cart</router-link>
             <div class="cart-items">
-            {{cart.length}}
-          </div>
+              {{ cart.length }}
+            </div>
           </li>
-
         </ul>
       </nav>
     </header>
@@ -40,15 +42,15 @@
 </template>
 
 <script>
-import {mapState, mapGetters} from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 export default {
   name: "App",
   computed: {
     ...mapState({
-      rootFoo:"foo",
-      usersFoo:state =>state.users.foo,
-      // robotsFoo:state =>state.robots.foo,      
+      rootFoo: "foo",
+      usersFoo: state => state.users.foo
+      // robotsFoo:state =>state.robots.foo,
     }),
     // rootFoo(){
     //   return this.$store.state.foo;
@@ -57,19 +59,19 @@ export default {
     //   return this.$store.state.robots.foo;
     // },
 
-    ...mapState("robots",{robotsFoo:"foo"}),
+    ...mapState("robots", { robotsFoo: "foo" }),
     // usersFoo(){
     //   return this.$store.state.users.foo;
     // },
-    cart(){
+    cart() {
       return this.$store.state.robots.cart;
     },
 
     ...mapGetters({
-      rootGetterFoo:"foo",
-      // robotsFoo:state =>state.getters["robots/foo"],      
+      rootGetterFoo: "foo"
+      // robotsFoo:state =>state.getters["robots/foo"],
     }),
-    ...mapGetters("robots",{robotsGetterFoo:"foo"}),
+    ...mapGetters("robots", { robotsGetterFoo: "foo" })
 
     // rootGetterFoo(){
     //   return this.$store.getters.foo;
@@ -77,10 +79,10 @@ export default {
     // usersGetterFoo(){
     //   return this.$store.getters["users/foo"];
     // },
-  },
+  }
 };
 </script>
-<style >
+<style>
 body {
   background: linear-gradient(to bottom, gray, gray);
   background-attachment: fixed;
@@ -112,7 +114,7 @@ ul {
   font-size: 22px;
   border-right: 1px solid #bbb;
 }
-.nav-item.cart{
+.nav-item.cart {
   position: relative;
   margin-left: auto;
   border-right: none;
@@ -139,11 +141,11 @@ ul {
   width: 100px;
   min-height: 300px;
 }
-.cart-items{
+.cart-items {
   position: absolute;
   top: -5px;
   right: -9px;
-  font-size: 18px;  
+  font-size: 18px;
   width: 20px;
   text-align: center;
   display: inline-block;

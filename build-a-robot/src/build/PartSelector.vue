@@ -1,11 +1,11 @@
 <template>
-  <div :class="[position,'part']">
+  <div :class="[position, 'part']">
     <router-link
       :to="{
-        name:'Parts', 
-        params:{
-          id:this.selectedPart.id,
-          partType:this.selectedPart.type
+        name: 'Parts',
+        params: {
+          id: this.selectedPart.id,
+          partType: this.selectedPart.type
         }
       }"
     >
@@ -14,11 +14,12 @@
     <button @click="selectPreviousPart()" class="prev-selector"></button>
     <button @click="selectNextPart()" class="next-selector"></button>
     <span
-      @click="pinPadding='30px'"
+      @click="pinPadding = '30px'"
       class="sale"
-      v-pin="{bottom:pinPadding, left:pinPadding}"
+      v-pin="{ bottom: pinPadding, left: pinPadding }"
       v-show="selectedPart.onSale"
-    >Sale!</span>
+      >Sale!</span
+    >
   </div>
 </template>
 
@@ -47,27 +48,27 @@ export default {
   props: {
     parts: {
       type: Array,
-      required: true,
+      required: true
     },
     position: {
       type: String,
       required: true,
-      validator: function (value) {
+      validator: function(value) {
         return ["left", "right", "center", "bottom", "top"].includes(value);
-      },
-    },
+      }
+    }
   },
 
   data() {
     return {
       selectedPartIndex: 0,
-      pinPadding: "10px",
+      pinPadding: "10px"
     };
   },
   computed: {
     selectedPart() {
       return this.parts[this.selectedPartIndex];
-    },
+    }
   },
   methods: {
     showPartInfo() {
@@ -75,26 +76,20 @@ export default {
         name: "Parts",
         params: {
           id: this.selectedPart.id,
-          partType: this.selectedPart.type,
-        },
+          partType: this.selectedPart.type
+        }
       });
     },
     emitSelectPart() {
       this.$emit("partSelected", this.selectedPart);
     },
     selectNextPart() {
-      this.selectedPartIndex = getNextValidIndex(
-        this.selectedPartIndex,
-        this.parts.length
-      );
+      this.selectedPartIndex = getNextValidIndex(this.selectedPartIndex, this.parts.length);
     },
     selectPreviousPart() {
-      this.selectedPartIndex = getPreviousValidIndex(
-        this.selectedPartIndex,
-        this.parts.length
-      );
-    },
-  },
+      this.selectedPartIndex = getPreviousValidIndex(this.selectedPartIndex, this.parts.length);
+    }
+  }
 };
 </script>
 

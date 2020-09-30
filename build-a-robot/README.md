@@ -28,11 +28,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/)
 
 ************************************************************************
 Install Node
-************************************************************************
-
+***********************************************************************
  -install nvm (node version manager)
  -install node: nvm install node_version
  -launch : nvm use node_version
+
 ************************************************************************
 vue-cli-service: local dev web server, based on webpack-dev-server
 
@@ -40,7 +40,7 @@ vue-cli-service: local dev web server, based on webpack-dev-server
 Component
 ************************************************************************
 
-There are 2 types of components (Vue instances): global/local components and single file (file.vue)
+There are 2 types of component (Vue instances): global/local component, and single file component (file.vue)
 global component pitlafes : global variables, string templates, css not encapsulated, no-build time compilation support,...
 
 //global component 
@@ -64,11 +64,11 @@ global component pitlafes : global variables, string templates, css not encapsul
  });
 
 ************************************************************************
-styling component
+Styling component
 ************************************************************************
  parent => child: 
   class style use inheritence (but some properties like "border" are not inheritable)
-  parent class is applied to child root element, not root element child (parent descendants)
+  parent class is applied to child root element, not to root element child (parent descendants)
   to apply parent style (class) to child, use deep selector ">>> or /deep/" to target any root element children
 
   example: 
@@ -84,25 +84,30 @@ styling component
         border: 2px solid blue;
     }
 
-BIND STYLE:
-example: 
-  :style="{border:'2px solid red'}" //to an object
-  or 
-  :style="saleBorderStyle" //on condition
+Bind style:
+  example: 
+    <template>
+      <p :style="{border:'2px solid red'}"></p> //to an object
+      or 
+      <p :style="saleBorderStyle"></p> //on condition
 
-  example:
-   ...
-   computed:{
-    saleBorderStyle(){
-      return {
-        border: this.selectedRobot.head.onSale ? "2px solid red": "3px solid #aaa"
-      }
-    },
-    ...
+    </temlate>
+    <script>
+     export default {
+        name="MyComp",
+        computed:{
+          saleBorderStyle(){
+            return {
+              border: this.selectedRobot.head.onSale ? "2px solid red": "3px solid #aaa"
+            }
+          },
+          ...
 
-   }
+        }
+     }
+    </script> 
 
-BIND CLASS:
+Bind class:
 :class="['sale-border']" ...
 
 on condition 
@@ -118,13 +123,12 @@ on condition
     ...
   }
 
-USE SASS:
+Use sass:
 install sass package : 
  npm i node-sass sass-loader --save-dev
 
 example of sass syntaxe:
 <style lang="scss">
-
 .part {
   img {
     width: 165px;

@@ -1,6 +1,6 @@
 {
   mode: 'production',
-  context: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot',
+  context: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot',
   devtool: 'source-map',
   node: {
     setImmediate: false,
@@ -12,14 +12,14 @@
     child_process: 'empty'
   },
   output: {
-    path: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\dist',
+    path: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\dist',
     filename: 'js/[name].[contenthash:8].js',
     publicPath: '/',
     chunkFilename: 'js/[name].[contenthash:8].js'
   },
   resolve: {
     alias: {
-      '@': 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\src',
+      '@': 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\src',
       vue$: 'vue/dist/vue.runtime.esm.js'
     },
     extensions: [
@@ -32,8 +32,8 @@
     ],
     modules: [
       'node_modules',
-      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules',
-      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\@vue\\cli-service\\node_modules'
+      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\Vue\\Robot\\build-a-robot\\node_modules',
+      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\@vue\\cli-service\\node_modules'
     ],
     plugins: [
       /* config.resolve.plugin('pnp') */
@@ -42,10 +42,10 @@
   },
   resolveLoader: {
     modules: [
-      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\@vue\\cli-plugin-babel\\node_modules',
+      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\@vue\\cli-plugin-babel\\node_modules',
       'node_modules',
-      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules',
-      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\@vue\\cli-service\\node_modules'
+      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules',
+      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\@vue\\cli-service\\node_modules'
     ],
     plugins: [
       /* config.resolve.plugin('pnp-loaders') */
@@ -61,20 +61,20 @@
         use: [
           /* config.module.rule('vue').use('cache-loader') */
           {
-            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\cache-loader\\dist\\cjs.js',
+            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\cache-loader\\dist\\cjs.js',
             options: {
-              cacheDirectory: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\.cache\\vue-loader',
+              cacheDirectory: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\.cache\\vue-loader',
               cacheIdentifier: '5da869f2'
             }
           },
           /* config.module.rule('vue').use('vue-loader') */
           {
-            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\vue-loader\\lib\\index.js',
+            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\vue-loader\\lib\\index.js',
             options: {
               compilerOptions: {
                 whitespace: 'condense'
               },
-              cacheDirectory: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\.cache\\vue-loader',
+              cacheDirectory: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\.cache\\vue-loader',
               cacheIdentifier: '5da869f2'
             }
           }
@@ -98,7 +98,7 @@
         use: [
           /* config.module.rule('svg').use('file-loader') */
           {
-            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\file-loader\\dist\\cjs.js',
+            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\file-loader\\dist\\cjs.js',
             options: {
               name: 'img/[name].[hash:8].[ext]'
             }
@@ -111,11 +111,11 @@
         use: [
           /* config.module.rule('media').use('url-loader') */
           {
-            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\url-loader\\dist\\cjs.js',
+            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\url-loader\\dist\\cjs.js',
             options: {
               limit: 4096,
               fallback: {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\file-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\file-loader\\dist\\cjs.js',
                 options: {
                   name: 'media/[name].[hash:8].[ext]'
                 }
@@ -130,11 +130,11 @@
         use: [
           /* config.module.rule('fonts').use('url-loader') */
           {
-            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\url-loader\\dist\\cjs.js',
+            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\url-loader\\dist\\cjs.js',
             options: {
               limit: 4096,
               fallback: {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\file-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\file-loader\\dist\\cjs.js',
                 options: {
                   name: 'fonts/[name].[hash:8].[ext]'
                 }
@@ -182,7 +182,7 @@
             use: [
               /* config.module.rule('css').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -190,7 +190,7 @@
               },
               /* config.module.rule('css').oneOf('vue-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -201,7 +201,7 @@
               },
               /* config.module.rule('css').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -217,7 +217,7 @@
             use: [
               /* config.module.rule('css').oneOf('vue').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -225,7 +225,7 @@
               },
               /* config.module.rule('css').oneOf('vue').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -233,7 +233,7 @@
               },
               /* config.module.rule('css').oneOf('vue').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -249,7 +249,7 @@
             use: [
               /* config.module.rule('css').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -257,7 +257,7 @@
               },
               /* config.module.rule('css').oneOf('normal-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -268,7 +268,7 @@
               },
               /* config.module.rule('css').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -283,7 +283,7 @@
             use: [
               /* config.module.rule('css').oneOf('normal').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -291,7 +291,7 @@
               },
               /* config.module.rule('css').oneOf('normal').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -299,7 +299,7 @@
               },
               /* config.module.rule('css').oneOf('normal').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -321,7 +321,7 @@
             use: [
               /* config.module.rule('postcss').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -329,7 +329,7 @@
               },
               /* config.module.rule('postcss').oneOf('vue-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -340,7 +340,7 @@
               },
               /* config.module.rule('postcss').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -356,7 +356,7 @@
             use: [
               /* config.module.rule('postcss').oneOf('vue').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -364,7 +364,7 @@
               },
               /* config.module.rule('postcss').oneOf('vue').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -372,7 +372,7 @@
               },
               /* config.module.rule('postcss').oneOf('vue').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -388,7 +388,7 @@
             use: [
               /* config.module.rule('postcss').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -396,7 +396,7 @@
               },
               /* config.module.rule('postcss').oneOf('normal-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -407,7 +407,7 @@
               },
               /* config.module.rule('postcss').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -422,7 +422,7 @@
             use: [
               /* config.module.rule('postcss').oneOf('normal').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -430,7 +430,7 @@
               },
               /* config.module.rule('postcss').oneOf('normal').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -438,7 +438,7 @@
               },
               /* config.module.rule('postcss').oneOf('normal').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -460,7 +460,7 @@
             use: [
               /* config.module.rule('scss').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -468,7 +468,7 @@
               },
               /* config.module.rule('scss').oneOf('vue-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -479,7 +479,7 @@
               },
               /* config.module.rule('scss').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -489,7 +489,7 @@
               },
               /* config.module.rule('scss').oneOf('vue-modules').use('sass-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false
                 }
@@ -502,7 +502,7 @@
             use: [
               /* config.module.rule('scss').oneOf('vue').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -510,7 +510,7 @@
               },
               /* config.module.rule('scss').oneOf('vue').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -518,7 +518,7 @@
               },
               /* config.module.rule('scss').oneOf('vue').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -528,7 +528,7 @@
               },
               /* config.module.rule('scss').oneOf('vue').use('sass-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false
                 }
@@ -541,7 +541,7 @@
             use: [
               /* config.module.rule('scss').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -549,7 +549,7 @@
               },
               /* config.module.rule('scss').oneOf('normal-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -560,7 +560,7 @@
               },
               /* config.module.rule('scss').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -570,7 +570,7 @@
               },
               /* config.module.rule('scss').oneOf('normal-modules').use('sass-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false
                 }
@@ -582,7 +582,7 @@
             use: [
               /* config.module.rule('scss').oneOf('normal').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -590,7 +590,7 @@
               },
               /* config.module.rule('scss').oneOf('normal').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -598,7 +598,7 @@
               },
               /* config.module.rule('scss').oneOf('normal').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -608,7 +608,7 @@
               },
               /* config.module.rule('scss').oneOf('normal').use('sass-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false
                 }
@@ -627,7 +627,7 @@
             use: [
               /* config.module.rule('sass').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -635,7 +635,7 @@
               },
               /* config.module.rule('sass').oneOf('vue-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -646,7 +646,7 @@
               },
               /* config.module.rule('sass').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -656,7 +656,7 @@
               },
               /* config.module.rule('sass').oneOf('vue-modules').use('sass-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   sassOptions: {
@@ -672,7 +672,7 @@
             use: [
               /* config.module.rule('sass').oneOf('vue').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -680,7 +680,7 @@
               },
               /* config.module.rule('sass').oneOf('vue').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -688,7 +688,7 @@
               },
               /* config.module.rule('sass').oneOf('vue').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -698,7 +698,7 @@
               },
               /* config.module.rule('sass').oneOf('vue').use('sass-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   sassOptions: {
@@ -714,7 +714,7 @@
             use: [
               /* config.module.rule('sass').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -722,7 +722,7 @@
               },
               /* config.module.rule('sass').oneOf('normal-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -733,7 +733,7 @@
               },
               /* config.module.rule('sass').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -743,7 +743,7 @@
               },
               /* config.module.rule('sass').oneOf('normal-modules').use('sass-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   sassOptions: {
@@ -758,7 +758,7 @@
             use: [
               /* config.module.rule('sass').oneOf('normal').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -766,7 +766,7 @@
               },
               /* config.module.rule('sass').oneOf('normal').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -774,7 +774,7 @@
               },
               /* config.module.rule('sass').oneOf('normal').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -784,7 +784,7 @@
               },
               /* config.module.rule('sass').oneOf('normal').use('sass-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   sassOptions: {
@@ -806,7 +806,7 @@
             use: [
               /* config.module.rule('less').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -814,7 +814,7 @@
               },
               /* config.module.rule('less').oneOf('vue-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -825,7 +825,7 @@
               },
               /* config.module.rule('less').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -848,7 +848,7 @@
             use: [
               /* config.module.rule('less').oneOf('vue').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -856,7 +856,7 @@
               },
               /* config.module.rule('less').oneOf('vue').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -864,7 +864,7 @@
               },
               /* config.module.rule('less').oneOf('vue').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -887,7 +887,7 @@
             use: [
               /* config.module.rule('less').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -895,7 +895,7 @@
               },
               /* config.module.rule('less').oneOf('normal-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -906,7 +906,7 @@
               },
               /* config.module.rule('less').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -928,7 +928,7 @@
             use: [
               /* config.module.rule('less').oneOf('normal').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -936,7 +936,7 @@
               },
               /* config.module.rule('less').oneOf('normal').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -944,7 +944,7 @@
               },
               /* config.module.rule('less').oneOf('normal').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -973,7 +973,7 @@
             use: [
               /* config.module.rule('stylus').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -981,7 +981,7 @@
               },
               /* config.module.rule('stylus').oneOf('vue-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -992,7 +992,7 @@
               },
               /* config.module.rule('stylus').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -1016,7 +1016,7 @@
             use: [
               /* config.module.rule('stylus').oneOf('vue').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -1024,7 +1024,7 @@
               },
               /* config.module.rule('stylus').oneOf('vue').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -1032,7 +1032,7 @@
               },
               /* config.module.rule('stylus').oneOf('vue').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -1056,7 +1056,7 @@
             use: [
               /* config.module.rule('stylus').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -1064,7 +1064,7 @@
               },
               /* config.module.rule('stylus').oneOf('normal-modules').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -1075,7 +1075,7 @@
               },
               /* config.module.rule('stylus').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -1098,7 +1098,7 @@
             use: [
               /* config.module.rule('stylus').oneOf('normal').use('extract-css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\mini-css-extract-plugin\\dist\\loader.js',
                 options: {
                   hmr: false,
                   publicPath: '../'
@@ -1106,7 +1106,7 @@
               },
               /* config.module.rule('stylus').oneOf('normal').use('css-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -1114,7 +1114,7 @@
               },
               /* config.module.rule('stylus').oneOf('normal').use('postcss-loader') */
               {
-                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
+                loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -1143,19 +1143,19 @@
         use: [
           /* config.module.rule('js').use('cache-loader') */
           {
-            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\cache-loader\\dist\\cjs.js',
+            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\cache-loader\\dist\\cjs.js',
             options: {
-              cacheDirectory: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\.cache\\babel-loader',
+              cacheDirectory: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\.cache\\babel-loader',
               cacheIdentifier: 'b0ea9efc'
             }
           },
           /* config.module.rule('js').use('thread-loader') */
           {
-            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\thread-loader\\dist\\cjs.js'
+            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\thread-loader\\dist\\cjs.js'
           },
           /* config.module.rule('js').use('babel-loader') */
           {
-            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\babel-loader\\lib\\index.js'
+            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\babel-loader\\lib\\index.js'
           }
         ]
       },
@@ -1165,12 +1165,12 @@
         test: /\.(vue|(j|t)sx?)$/,
         exclude: [
           /node_modules/,
-          'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\@vue\\cli-service\\lib'
+          'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\@vue\\cli-service\\lib'
         ],
         use: [
           /* config.module.rule('eslint').use('eslint-loader') */
           {
-            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\eslint-loader\\index.js',
+            loader: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\eslint-loader\\index.js',
             options: {
               extensions: [
                 '.js',
@@ -1181,7 +1181,7 @@
               cacheIdentifier: '1dc751a9',
               emitWarning: false,
               emitError: false,
-              eslintPath: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\node_modules\\eslint',
+              eslintPath: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\eslint',
               formatter: undefined
             }
           }
@@ -1324,7 +1324,7 @@
           collapseBooleanAttributes: true,
           removeScriptTypeAttributes: true
         },
-        template: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\public\\index.html'
+        template: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\public\\index.html'
       }
     ),
     /* config.plugin('preload') */
@@ -1349,8 +1349,8 @@
     new CopyPlugin(
       [
         {
-          from: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\public',
-          to: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Pluralsight\\2 JCOOPER\\Getting-started-jcooper\\build-a-robot\\dist',
+          from: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\public',
+          to: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\dist',
           toType: 'dir',
           ignore: [
             '.DS_Store',

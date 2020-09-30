@@ -27,7 +27,7 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/)
 
 ************************************************************************
-Install Node
+Install node.js
 ***********************************************************************
  -install nvm (node version manager)
  -install node: nvm install node_version
@@ -84,46 +84,54 @@ Styling component
         border: 2px solid blue;
     }
 
+************************************************************************
 Bind style:
-  example: 
-    <template>
-      <p :style="{border:'2px solid red'}"></p> //to an object
-      or 
-      <p :style="saleBorderStyle"></p> //on condition
+************************************************************************
+<template>
 
-    </temlate>
-    <script>
-     export default {
-        name="MyComp",
-        computed:{
-          saleBorderStyle(){
-            return {
-              border: this.selectedRobot.head.onSale ? "2px solid red": "3px solid #aaa"
-            }
-          },
-          ...
+  <div>
+    <p :style="{border:'2px solid red'}"></p>
+    <p :style="saleBorderStyle"></p> 
+  </div>
+</template>
+  <script>
+    export default {
+      name="MyComp",
+      computed:{
+        saleBorderStyle(){
+          return {
+            border: this.selectedRobot.head.onSale ? "2px solid red": "3px solid #aaa"
+          }
+        },
+      }
+    }
+  </script>
 
-        }
-     }
-    </script> 
-
+************************************************************************
 Bind class:
-:class="['sale-border']" ...
+************************************************************************
+<template>
+  <div>
+    <p :class="['sale-border']"></p>
+    <p :class="{'sale-border': selectedRobot.head.onSale}"></p> 
+    <p :class="[saleBorderClass]"></p> 
+  </div>
+</template>
+  <script>
+    export default {
+      name="MyComp",
+      computed:{
+          saleBorderClass(){
+          return this.selectedRobot.head.onSale ? "sale-border": "";
+          },
+        },
+      }
+    }
+  </script>
 
-on condition 
- :class="{'sale-border': selectedRobot.head.onSale}" or
- :class="[saleBorderClass]" 
-
- example:
-  computed:{
-    ...,
-    saleBorderClass(){
-      return this.selectedRobot.head.onSale ? "sale-border": "";
-    },
-    ...
-  }
-
+************************************************************************
 Use sass:
+************************************************************************
 install sass package : 
  npm i node-sass sass-loader --save-dev
 
@@ -137,13 +145,20 @@ example of sass syntaxe:
 
 </style>
 
-COMPONENT LIFECYCLE:
+************************************************************************
+Component lifecycle:
+************************************************************************
 beforeCreate => created => beforeMount=> mounted => beforeUpdate => updated => beforeDetroy => destroyed
 
-MIXINS:
+************************************************************************
+Mixins:
+************************************************************************
 1 Create mixin.js file
 2 import file where to use it
 3 add it to (target) mixins props: 
+
+<script>
+  import mixin from "mixin.js"
   export default {
       data(){
 
@@ -153,18 +168,16 @@ MIXINS:
       ...
   }
 
-COMMUNICATION BETWEEN COMPONENTS:
- send data from parent to child with : use propos (child html attribute) and slot (injection)
- send data from child to parent: use event 
+</script>
 
-  Example: 
-    $emit("event", data);
- 
- validate props with: type, default value, etc.
+************************************************************************
+Communication between components
+************************************************************************
+ Send data from parent to child with : use props (child html attribute) and slot (injection)
+ Send data from child to parent: use event 
 
-  example:
-
-    export default {
+<script>
+  export default {
     // props: ["parts","position"],
     props: {
       parts:{
@@ -179,15 +192,29 @@ COMMUNICATION BETWEEN COMPONENTS:
         } 
       }
     }
+      data(){
 
-ROUTING:
+      },
+      methods:{
+        onClick(){
+              this.$emit("event", data);
+        }
+      }
+      ...
+  }
+
+</script>
+
+************************************************************************
+Routing
+************************************************************************
 install vue router package:
- vue cli: 
- - vue add router 
+ from vue cli: "vue add router" 
  or
- - npm install vue-router --save:
+ from npm: 
+    "npm install vue-router --save"
     1 create "router" folder and add index.js:
-
+    
       import Vue from "vue";
       import Router from "vue-router";
 
@@ -200,7 +227,8 @@ install vue router package:
     2 conig main.js
       import Vue from "vue";
       import App from "./App.vue";
-      import router from "./router/index"; //import router from "./router";
+      import router from "./router/index"; 
+      //import router from "./router";
 
       Vue.config.productionTip = false;
 
@@ -210,11 +238,14 @@ install vue router package:
       }).$mount('#app');
 
 
+************************************************************************
 router output: <router-view></route-view>
+************************************************************************
 
+************************************************************************
 router link:
-<router-link to="/">: use route path ("/")
-or
+************************************************************************
+<router-link to="/">: use route path ("/") //or
 <router-link :to="{name:'Home'}">: bind to route object
 
 path with parms from routerLink
@@ -272,7 +303,11 @@ Navigate from javascript code:
 
     you can validate props: see earlier;
 
-USE NAMED VIEW:
+************************************************************************
+Use named view
+************************************************************************
+<script>
+  export default{
     const routes = [
       {
         path: "/",
@@ -282,51 +317,50 @@ USE NAMED VIEW:
             sidebar: StandSideBar
         } 
       },
-      ...
+    // Navigation guard: from and to 
+    //  can be done on route or component
+      {
+        path: "/parts/:partType/:id",
+        name: "Parts",
+        component: PartInfo,
+        props: true,
+        beforeEnter: (to, from, next) => {
+            const isValidId = Number.isInteger(Number(to.params.id));
+            next(isValidId);
+        }
+      },
+  }
+</script>
 
-      ... App.vue
-      ...
-          <div class="container">
-            <aside class="aside">
-            <!--name view-->
-              <router-view name="sidebar"></router-view>
-            </aside>
-            <main>
-              <!--default view-->
-              <router-view></router-view>
-            </main>
-          </div>
-      ...
+  ... App.vue
 
-    Use history mode to remove # in url
+<template>
+    <div class="container">
+      <aside class="aside">
+      <!--name view-->
+        <router-view name="sidebar"></router-view>
+      </aside>
+      <main>
+        <!--default view-->
+        <router-view></router-view>
+      </main>
+    </div>
+</template>
 
+************************************************************************
+Use "history" mode to remove # in url
+************************************************************************
+<script>
     export default new Router({
         mode:"history",
         routes
     });
+</script>
 
-
-    Navigation guard: from and to 
-     can be done on route or component
-
-    Example of "from":
-    on route:
-      const routes:[
-        {
-          path: "/parts/:partType/:id",
-          name: "Parts",
-          component: PartInfo,
-          props: true,
-          beforeEnter: (to, from, next) => {
-              const isValidId = Number.isInteger(Number(to.params.id));
-              next(isValidId);
-          }
-        },
-          ...
-      ];
-
+************************************************************************
 VUEX (View X):
-One state for sevral objects
+************************************************************************
+One state for several objects
 Mutation is synchronous
 Actions  are async
 Getters are use to read state
@@ -334,6 +368,8 @@ Getters are use to read state
 npm install vuex@[version] --save
 1 create store folder in scr
 2 add index.js
+
+<script>
   import Vue from "vue";
   import Vuex from "vuex";
 
@@ -357,8 +393,12 @@ npm install vuex@[version] --save
       }
     }      
   });
+</script>
 
- 3 config main.js
+ ************************************************************************
+3 config main.js
+************************************************************************
+<script>
   import store from "./store";
 
   Vue.config.productionTip = false;
@@ -369,34 +409,47 @@ npm install vuex@[version] --save
     render: (h) => h(App),
   }).$mount('#app');
 
+</script>
+
+ ************************************************************************
 Read store from state:
+ ************************************************************************
+<script>
+  export default {
+    name:"",
+    computed:{
+    cart(){
+      return this.$store.state.robots.cart;
+    },
+    saleCart(){
+      return this.$store.getters.cartSaleItems;
+    }
+  }
+</script>
  ...
- computed:{
-   cart(){
-     return this.$store.state.robots.cart;
-   },
-   saleCart(){
-     return this.$store.getters.cartSaleItems;
-   }
- }
- ...
- Use action to with API
+************************************************************************
+Use action to with API
+ ************************************************************************
   install axios
   config proxy: add "vue.congi.js" file to project root
-     
+  <script>
    module.exports={
-    devServer:{
-        proxy:{
-            "/api":{
-                target:"http://localhost:8081",
-                changeOrigin:true
+      devServer:{
+            proxy:{
+                "/api":{
+                    target:"http://localhost:8081",
+                    changeOrigin:true
+                }
             }
         }
     }
-}
+    </script>
 
+************************************************************************
 Use action from store
-
+************************************************************************
+<script>
+  export default {
     actions:{
         getParts({commit}){
            //use relative url not : htpp://localhost/api/parts with vue proxy
@@ -404,67 +457,53 @@ Use action from store
            .then(result=>commit("updateParts",result.data))
            .catch(console.error);
         },
-       addRobotToCart({commit, state}, robot){
-            const cart=[...state.cart, robot];
-            return axios.post("/api/cart", cart)
-            .then(()=>commit("addRobotToCart",robot));
-        }
-    },
-//Commit => mutations (use 'state' and object to save)
-...
+        addRobotToCart({commit, state}, robot){
+              const cart=[...state.cart, robot];
+              return axios.post("/api/cart", cart)
+              .then(()=>commit("addRobotToCart",robot));
+          }
+      },
+      //Commit => mutations (use 'state' and object to save)
+        methods: {
+          addToCart() {
+            const robot = this.selectedRobot;
+            const total =
+              robot.head.cost +
+              robot.leftArm.cost +
+              robot.torso.cost +
+              robot.rightArm.cost +
+              robot.base.cost;
 
-  methods: {
-    addToCart() {
-      const robot = this.selectedRobot;
-      const total =
-        robot.head.cost +
-        robot.leftArm.cost +
-        robot.torso.cost +
-        robot.rightArm.cost +
-        robot.base.cost;
+            //"addRobotToCart" is an mutation in store file index.js
+            this.$store.commit("addRobotToCart",Object.assign({}, robot, { total }));
+            this.addedToCart=true;
 
-      //"addRobotToCart" is an mutation in store file index.js
-      this.$store.commit("addRobotToCart",Object.assign({}, robot, { total }));
-      this.addedToCart=true;
-    },
-  },
-...
-dispatch => actions (use a context (commit), state and object to use: make job)
-...
-  methods: {
-    addToCart() {
-      const robot = this.selectedRobot;
-      const total =
-        robot.head.cost +
-        robot.leftArm.cost +
-        robot.torso.cost +
-        robot.rightArm.cost +
-        robot.base.cost;
+            // // dispatch => actions (use a context (commit), state and object to use: make job)
+            // this.$store.dispatch("addRobotToCart", Object.assign({}, robot, { total }))
+            // .then(()=>this.$router.push("/cart"));
+            // this.addedToCart=true;
+          },
 
-      //"addRobotToCart" is an action in store file index.js
-      this.$store.dispatch("addRobotToCart", Object.assign({}, robot, { total }))
-      .then(()=>this.$router.push("/cart"));
-      this.addedToCart=true;
-    },
-  },
+        },
+</script>
 
 
-ORGANIZE STORE WITH MODULE
+************************************************************************
+Organize store with modules
+************************************************************************
+
 create a store file for each module, example robots.js
+<script>
+  export default {
 
-export default {
-
-}
-
+  }
+</script>
 import module in main store file, store/index.js
-  ...
+
+<script>  ...
   import robotsModules from "./modules/robots";
   import usersModules from "./modules/users";
-
-
   Vue.use(Vuex);
-
-
   export default new Vuex.Store({
       modules:{
           robots:robotsModules,
@@ -473,18 +512,16 @@ import module in main store file, store/index.js
 
   });
 
-use namespaced actions
-...
-  created(){
-    //actions
-    this.$store.dispatch("robots/getParts");
-  }, 
-...
+ </script> 
 
-Use namespaced getters
+<script>
 export default {
-  name: 'Cart',
-  computed: {
+    name: 'Cart',
+    created(){
+    //use namespaced actions
+    this.$store.dispatch("robots/getParts");
+    }, 
+    computed: {
       cart(){
           return this.$store.state.robots.cart;
       },
@@ -494,25 +531,31 @@ export default {
       }
   },
 }
-
-"state" and "getters" pass to mutations and getters modules are local to module
-export default{
-  ...
-    mutations: {
-    updateCurrentUser(state, user) {
-      state.user = user;
+</script>
+// Use namespaced getters
+// "state" and "getters" pass to mutations 
+// getters modules are local to module
+<script>
+  export default {
+      mutations: {
+      updateCurrentUser(state, user) {
+        state.user = user;
+      },
     },
-  },
-  getters: {
-    foo(state, getters, rootState){
-      //use rootState to access to rootState, not avalaible in mutations and actions
-      return `Users-getter/ ${state.foo}`;
-    }
-  },
-  ...
-}
+    getters: {
+      foo(state, getters, rootState){
+        //use rootState to access to rootState, not avalaible in mutations and actions
+        return `Users-getter/ ${state.foo}`;
+      }
+    },
+    ...
+  }
+  </script>
 
-MAP: GETTERS and STATE
+************************************************************************
+Map getters and state
+************************************************************************
+<script>
 export default {
   name: "App",
   computed: {
@@ -552,8 +595,11 @@ export default {
     ...mapGetters({robotsGetterFoo:state =>state.getters["robots/foo"] }),
   },
 };
-
+</script>
+************************************************************************
 MAP ACTIONS
+************************************************************************
+<script>
 import {mapActions} from "vuex";
 
 export default {
@@ -581,35 +627,41 @@ export default {
       .then(()=>this.$router.push("/cart"));
   }
 }
+// Idem for map mutations
+</script>
 
-Idem for map mutations
-
-DIRECTIVES AND FILTERS
-  create js file
-  example
-  export  default{
+************************************************************************
+Directives and filters
+************************************************************************
+ create js file
+  <script>
+  export  default {
     bind:(element)=>{
-        element.style.position='absolute';
-        element.style.bottom="5px";
-        element.style.right="5px";
+          element.style.position='absolute';
+          element.style.bottom="5px";
+          element.style.right="5px";
+      }
     }
-  }
-
+  </script>
  
   import file  in target component
-  example:
+
+  <script>
   import pinDirective from "../shared/pin-direcitve";
 
   export default {
       ...
-      //directive name v-pin
-      directives:{pin:pinDirective},
+      //directive: v-pin
+      directives:{
+        pin:pinDirective
+      },
       ...
     }
+  </script>
 
-    directive can receive arg (position) and modifiers (top.right)
-    example:
-      export  default{
+  directive can receive arg (position) and modifiers (top.right)
+  <script>
+      export  default {
           //direct hook
           bind:(element,binding)=>{
               if(binding.arg!=="position") return;
@@ -619,72 +671,70 @@ DIRECTIVES AND FILTERS
               element.style.position='absolute';
           }
       }
-      <div>
-        <span class="sale" v-pin:position.top.right v-show="selectedPart.onSale">Sale!</span>
-      </div>
+  </script>    
+use directive
+<template>
+    <div>
+      <span class="sale" v-pin:position.top.right v-show="selectedPart.onSale">Sale!</span>
+    </div>
+</template>
 
-    //directive can bind to an object 
-      export  default{
-          bind:(element,binding)=>{
+directive can bind to an object 
+<template>
+    <div>
+        <span class="sale" v-pin="{bottom:'5px', left:'5px'}" v-show="selectedPart.onSale">Sale!</span>
+    </div>
+</tempate>
+<script>
+        //use others hooks than "bind"
+        const applyStyle=function(element, binding){
+            Object.keys(binding.value).forEach((position)=>{
+                element.style[position]=binding.value[position];
+            });
+            element.style.position='absolute';
+        };
+      export default {
+            bind:(element,binding)=>{
               Object.keys(binding.value).forEach((position)=>{
-                  element.style[position]="5px";
-              });
-              element.style.position='absolute';
-          }
-      }
-      <div>
-          <span class="sale" v-pin="{bottom:'5px', left:'5px'}" v-show="selectedPart.onSale">Sale!</span>
-      </div>
-
-      //use others hooks than "bind"
-      const applyStyle=function(element, binding){
-          Object.keys(binding.value).forEach((position)=>{
-              element.style[position]=binding.value[position];
-          });
-          element.style.position='absolute';
-      };
-      export  default{
-          bind:(element,binding)=>{
-              applyStyle(element,binding);
+                element.style[position]="5px";
+            });
+            element.style.position='absolute';
           },
-          update:(element, binding)=>{
-              applyStyle(element,binding);
-          }
+          // bind:(element,binding)=>{
+          //     applyStyle(element,binding);
+          // },
+          // update:(element, binding)=>{
+          //     applyStyle(element,binding);
+          // }
       }
+ </script>     
+************************************************************************
+Declare global directive (in main.js)
+************************************************************************
+ <script> 
+   import pinDirective from './shared/pin-directive';
+   Vue.config.productionTip = false;
+   Vue.directive("pin",pinDirective);
+   new Vue({
+      store,
+      router,
+      render: (h) => h(App),
+    }).$mount('#app');
+  </script>
+************************************************************************
+Create filters
+************************************************************************
+  1 create filter js file 
+  <script>
+    export default function (amount,symbol){
+        return `${symbol} ${amount.toFixed(2)}`;
+    }
+    //declare global filter in main.js like directive
+  </script>
 
-      //above code can be replaced  by function export
-
-      export  default function (element, binding){
-          Object.keys(binding.value).forEach((position)=>{
-              element.style[position]=binding.value[position];
-          });
-          element.style.position='absolute';
-      }
-
-      DECLARE GLOBAL DIRECTIVE (in main.js)
-        
-        import pinDirective from './shared/pin-directive';
-
-        Vue.config.productionTip = false;
-        Vue.directive("pin",pinDirective);
-
-        new Vue({
-          store,
-          router,
-          render: (h) => h(App),
-        }).$mount('#app');
-
-
-      CREATE FILTERS
-      1 create filter js file 
-      ex:
-      export default function (amount,symbol){
-          return `${symbol} ${amount.toFixed(2)}`;
-      }
-
-      //declare global filter in main.js like directive
-
-    DEPLOYING APP
+************************************************************************
+Deploy app
+************************************************************************
     zero config integrate many packages
     npm run buid: create deployable dist folder, copy dist folder to web server
     deployment guide: https://cli.vuejs.org/guide/deployment.html
@@ -697,7 +747,8 @@ DIRECTIVES AND FILTERS
      
      build a production deployemnent
      config server:
-     ex:
+
+  <script>
       const path = require('path')
       const express = require("express");
 
@@ -731,53 +782,62 @@ DIRECTIVES AND FILTERS
       app.use("/",express.static("dist",{index:'index.html'}));
 
       app.listen(8081, () => console.log('Server listening on port 8081!'));
-      
-      DEEP LINKING
-      npm install --save connect-history-api-fallback
+  </script>
 
-      //in server index.js file
-      const history=require("connect-history-api-fallback");
+************************************************************************
+Deep linking
+************************************************************************
+npm install --save connect-history-api-fallback
 
-      const app = express();
-      app.use(history({index:"/index.html"}));
+//in server index.js file
+  <script>
+    const history=require("connect-history-api-fallback");
+    const app = express();
+    app.use(history({index:"/index.html"}));
+    ...
+  </script>
 
-      WEBPACK CONFIG
-      generate webpack:
-       > vue inspect --mode=production > webpack.config.js
+************************************************************************
+WEBPACK CONFIG
+************************************************************************
+generate webpack:
+  > vue inspect --mode=production > webpack.config.js
 
-      Constumize webpack from vue.config.js file:
-      module.exports={
-        configureWebpack:{
-            module:{
-                rules:[
-                    {
-                        test:/\.coffee$/,
-                        use:['coffee-loader']
-                    },
-                    {
-                        test:/\.(png|jpe?g|gif)(\?.*)?$/,
-                        use:[{
-                            loader:"url-loader",
-                            options:{
-                                limit:5000,
-                                name:"img/[name].[hash:8].[ext]"
-                            }
-                        }]
-                    }
-                ]
-            }
-        },
-        devServer:{
-            proxy:{
-                "/api":{
-                    target:"http://localhost:8081",
-                    changeOrigin:true
-                }
-            }
-        }
-    }
-      use object and function syntaxes:
-      ex:
+    Constumize webpack from vue.config.js file:
+   <script> 
+    module.exports={
+      configureWebpack:{
+          module:{
+              rules:[
+                  {
+                      test:/\.coffee$/,
+                      use:['coffee-loader']
+                  },
+                  {
+                      test:/\.(png|jpe?g|gif)(\?.*)?$/,
+                      use:[{
+                          loader:"url-loader",
+                          options:{
+                              limit:5000,
+                              name:"img/[name].[hash:8].[ext]"
+                          }
+                      }]
+                  }
+              ]
+          }
+      },
+      devServer:{
+          proxy:{
+              "/api":{
+                  target:"http://localhost:8081",
+                  changeOrigin:true
+              }
+          }
+      }
+  }
+  </script>
+use object and function syntaxes:
+<script>
         module.exports = {
             configureWebpack: (config) => {
                 config.module.rules.push({
@@ -809,4 +869,6 @@ DIRECTIVES AND FILTERS
                 }
             }
         }
-      Manage active nav-link color: add "exact" in router-link elt
+ </script>     
+
+ Manage active nav-link color: add "exact" in router-link elt

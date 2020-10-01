@@ -29,7 +29,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/)
 ************************************************************************
 Install node.js
 ***********************************************************************
- -install nvm (node version manager)
+ -install nvm (node version manager): download, end install
  -install node: nvm install node_version
  -launch : nvm use node_version
 
@@ -42,16 +42,16 @@ Component
 
 There are 2 types of component (Vue instances): global/local component, and single file component (file.vue)
 global component pitlafes : global variables, string templates, css not encapsulated, no-build time compilation support,...
-
+<script>
 //global component 
  const World= Vue.component({
-     "World",
+     name:"World",
      template:"<span>World !</span>"
  });
 
 //local component: need to be declare before use it
- const Message= ()=>{
-     "World",
+ const Message = ()=>{
+     component:{World},
      template:"Hello <World/>"
  });
 
@@ -62,7 +62,7 @@ global component pitlafes : global variables, string templates, css not encapsul
        Message
      }
  });
-
+</script>
 ************************************************************************
 Styling component
 ************************************************************************
@@ -73,30 +73,31 @@ Styling component
 
   example: 
    //apply parent class "content" to children with class "robot-name"
-   .content >>> .robot-name {
-        color: red;
-        border: 2px solid blue;
-    }
-
-    or 
-   .content /deep/ .robot-name {
-        color: red;
-        border: 2px solid blue;
-    }
-
+   <style>
+      .content >>> .robot-name {
+          color: red;
+          border: 2px solid blue;   
+       }
+        /* or  */
+      .content /deep/ .robot-name {
+          color: red;
+          border: 2px solid blue;
+       }
+  </style>
 ************************************************************************
 Bind style:
 ************************************************************************
 <template>
-
   <div>
+     <!-- bind to object -->
     <p :style="{border:'2px solid red'}"></p>
+     <!-- bind to computed prop -->
     <p :style="saleBorderStyle"></p> 
   </div>
 </template>
+
   <script>
     export default {
-      name="MyComp",
       computed:{
         saleBorderStyle(){
           return {
@@ -112,17 +113,24 @@ Bind class:
 ************************************************************************
 <template>
   <div>
+    <!-- bind to class name   -->
     <p :class="['sale-border']"></p>
+    <!-- bind to object -->
     <p :class="{'sale-border': selectedRobot.head.onSale}"></p> 
+    <!-- bind to computed prop -->
     <p :class="[saleBorderClass]"></p> 
   </div>
 </template>
   <script>
     export default {
-      name="MyComp",
+      data(){
+        return {
+          selectedRobot:{}
+        }
+      },
       computed:{
           saleBorderClass(){
-          return this.selectedRobot.head.onSale ? "sale-border": "";
+            return this.selectedRobot.head.onSale ? "sale-border": "";
           },
         },
       }
@@ -136,13 +144,13 @@ install sass package :
  npm i node-sass sass-loader --save-dev
 
 example of sass syntaxe:
+
 <style lang="scss">
 .part {
   img {
     width: 165px;
   }
 }
-
 </style>
 
 ************************************************************************
@@ -161,13 +169,14 @@ Mixins:
   import mixin from "mixin.js"
   export default {
       data(){
-
+        return {
+          name=""
+        }
       },
       mixins:[myMixin],
       props:[],
       ...
   }
-
 </script>
 
 ************************************************************************
@@ -191,15 +200,12 @@ Communication between components
           return ['left','right', 'center', 'bottom', 'base'].includes(value);
         } 
       }
-    }
-      data(){
-
-      },
-      methods:{
-        onClick(){
-              this.$emit("event", data);
-        }
+    },
+    methods:{
+      onClick(){
+            this.$emit("event", data);
       }
+    }
       ...
   }
 
@@ -214,21 +220,22 @@ install vue router package:
  from npm: 
     "npm install vue-router --save"
     1 create "router" folder and add index.js:
-    
+    <script>
       import Vue from "vue";
       import Router from "vue-router";
-
       Vue.use(Router);
       const routes:[];
       export default new Router({        
         routes
       });
+    </script>
 
     2 conig main.js
+
+   <script>
       import Vue from "vue";
       import App from "./App.vue";
-      import router from "./router/index"; 
-      //import router from "./router";
+      import router from "./router/index";  //import router from "./router";
 
       Vue.config.productionTip = false;
 
@@ -236,77 +243,88 @@ install vue router package:
         router,
         render: (h) => h(App),
       }).$mount('#app');
-
-
-************************************************************************
-router output: <router-view></route-view>
-************************************************************************
+   </script>
 
 ************************************************************************
 router link:
 ************************************************************************
-<router-link to="/">: use route path ("/") //or
-<router-link :to="{name:'Home'}">: bind to route object
-
-path with parms from routerLink
-
-    <router-link :to="{
+<template>
+  <div>
+     <!-- use route path ("/") //or -->
+    <router-link to="/">
+    <!--  bind to route object -->
+    <router-link :to="{name:'Home'}">
+     <!--  bind to route object with params-->
+       <router-link :to="{
         name:'Parts',
         params:{
           id:this.selectedPart.id,
           partType:this.selectedPart.type
         }
       }">
+    <!--  link output -->
+     <router-view></route-view>
+  </div>
+</template>
 
 Navigate from javascript code: 
- Examples:
-    showPartInfo(){
-      this.$router.push("/parts");
-    },
-
-    // path with params
-    showPartInfo(){
-      this.$router.push({
-        name:"Parts",
-        params:{
-          id:this.selectedPart.id,
-          partType:this.selectedPart.type
-        }
-      });
-    },
+  <script>
+   export default {
+      showPartInfo(){
+        this.$router.push("/parts");
+      },
+      // // path with params
+      // showPartInfo(){
+      //   this.$router.push({
+      //     name:"Parts",
+      //     params:{
+      //       id:this.selectedPart.id,
+      //       partType:this.selectedPart.type
+      //     }
+      //   });
+      // },
+   }
+   </script>
 
     You can use "props" to pass params to router:
      - set route props to true: 
-     Example:
+     
+   <script>
      const routes = [
-          ...,
           {
               path: "/parts/:partType/:id",
               name: "Parts",
               component: PartInfo,
               props:true 
           },
-          ...
-          ];
-    
-    in target component code: 
-    Example:
+       ];
+
+       export default {
+
+       }
+    </script>
+
+  in target component code: 
+
+  <script>  
     export default {
       props:['partType', 'id'],
       computed:{
         part() {
+          // deconstruct object
           const {partType, id}=this;      
           return parts[partType].find(part =>part.id=== +id);
         },
       }
     }
-
-    you can validate props: see earlier;
+    // you can validate props: see earlier;
+  </script>  
 
 ************************************************************************
 Use named view
 ************************************************************************
 <script>
+  // router file: index.js
   export default{
     const routes = [
       {
@@ -314,6 +332,7 @@ Use named view
         name: "Home",
         components:{
             default: HomePage,
+            // user named view
             sidebar: StandSideBar
         } 
       },
@@ -358,16 +377,16 @@ Use "history" mode to remove # in url
 </script>
 
 ************************************************************************
-VUEX (View X):
+Vuex (View X):
 ************************************************************************
 One state for several objects
-Mutation is synchronous
+Mutations are synchronous
 Actions  are async
 Getters are use to read state
 
 npm install vuex@[version] --save
-1 create store folder in scr
-2 add index.js
+1 create store folder in scr folder
+2 add "index.js" in store 
 
 <script>
   import Vue from "vue";
@@ -399,6 +418,7 @@ npm install vuex@[version] --save
 3 config main.js
 ************************************************************************
 <script>
+  // import store
   import store from "./store";
 
   Vue.config.productionTip = false;
@@ -412,7 +432,7 @@ npm install vuex@[version] --save
 </script>
 
  ************************************************************************
-Read store from state:
+Read state from store
  ************************************************************************
 <script>
   export default {
@@ -430,8 +450,8 @@ Read store from state:
 ************************************************************************
 Use action to with API
  ************************************************************************
-  install axios
   config proxy: add "vue.congi.js" file to project root
+
   <script>
    module.exports={
       devServer:{
@@ -448,11 +468,17 @@ Use action to with API
 ************************************************************************
 Use action from store
 ************************************************************************
+  install axios for api: npm install axios
+
 <script>
+  // import axios
+  import axios from "axios"
+
   export default {
     actions:{
         getParts({commit}){
-           //use relative url not : htpp://localhost/api/parts with vue proxy
+           //use relative url with vue proxy config earlier
+           //use htpp://localhost/api/parts if not use proxy
            axios.get("/api/parts")
            .then(result=>commit("updateParts",result.data))
            .catch(console.error);
@@ -460,31 +486,32 @@ Use action from store
         addRobotToCart({commit, state}, robot){
               const cart=[...state.cart, robot];
               return axios.post("/api/cart", cart)
+              //Commit use mutations; mutaion use 'state' and object to save
               .then(()=>commit("addRobotToCart",robot));
           }
       },
-      //Commit => mutations (use 'state' and object to save)
-        methods: {
-          addToCart() {
-            const robot = this.selectedRobot;
-            const total =
-              robot.head.cost +
-              robot.leftArm.cost +
-              robot.torso.cost +
-              robot.rightArm.cost +
-              robot.base.cost;
+      methods: {
+        addToCart() {
+          const robot = this.selectedRobot;
+          const total =
+            robot.head.cost +
+            robot.leftArm.cost +
+            robot.torso.cost +
+            robot.rightArm.cost +
+            robot.base.cost;
 
-            //"addRobotToCart" is an mutation in store file index.js
-            this.$store.commit("addRobotToCart",Object.assign({}, robot, { total }));
-            this.addedToCart=true;
+          //To commit need "mutation":  here "addRobotToCart"
+          this.$store.commit("addRobotToCart",Object.assign({}, robot, { total }));
+          this.addedToCart=true;
 
-            // // dispatch => actions (use a context (commit), state and object to use: make job)
-            // this.$store.dispatch("addRobotToCart", Object.assign({}, robot, { total }))
-            // .then(()=>this.$router.push("/cart"));
-            // this.addedToCart=true;
-          },
-
+          // // dispatch use an action
+          // // action use a context (commit), state and object needet to make job
+          // this.$store.dispatch("addRobotToCart", Object.assign({}, robot, { total }))
+          // .then(()=>this.$router.push("/cart"));
+          // this.addedToCart=true;
         },
+
+      },
 </script>
 
 
@@ -492,17 +519,23 @@ Use action from store
 Organize store with modules
 ************************************************************************
 
-create a store file for each module, example robots.js
+create file for each module, in "modules" folder: example robots.js
 <script>
   export default {
-
+    state:{},
+    mutations:{},
+    action:{},
+    getters:{}
   }
 </script>
-import module in main store file, store/index.js
 
-<script>  ...
+import module file in main store file: ./store/index.js
+
+<script>  
+
   import robotsModules from "./modules/robots";
   import usersModules from "./modules/users";
+
   Vue.use(Vuex);
   export default new Vuex.Store({
       modules:{
@@ -535,6 +568,7 @@ export default {
 // Use namespaced getters
 // "state" and "getters" pass to mutations 
 // getters modules are local to module
+
 <script>
   export default {
       mutations: {

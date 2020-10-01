@@ -832,7 +832,7 @@ npm install --save connect-history-api-fallback
   </script>
 
 ************************************************************************
-WEBPACK CONFIG
+Webpack config
 ************************************************************************
 generate webpack:
   > vue inspect --mode=production > webpack.config.js

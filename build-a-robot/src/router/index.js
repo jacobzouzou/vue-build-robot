@@ -18,7 +18,7 @@ const childrenRoutes = [
   {
     name: "BrowseHeads",
     path: "heads",
-    components: RobotHeads
+    component: RobotHeads
   },
   {
     name: "BrowseArms",

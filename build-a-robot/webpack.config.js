@@ -1,3 +1,6 @@
+You are using Node v11.10.1.
+Node.js 11.x has already reached end-of-life and will not be supported in future major releases.
+It's strongly recommended to use an active LTS version instead.
 {
   mode: 'production',
   context: 'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot',
@@ -32,7 +35,7 @@
     ],
     modules: [
       'node_modules',
-      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\Vue\\Robot\\build-a-robot\\node_modules',
+      'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules',
       'C:\\Users\\jacob\\source\\repos\\JS Frameworks\\Vue\\Robot\\build-a-robot\\node_modules\\@vue\\cli-service\\node_modules'
     ],
     plugins: [

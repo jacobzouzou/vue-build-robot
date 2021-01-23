@@ -1,12 +1,12 @@
-const path = require('path');
+const path = require("path");
 const express = require("express");
 
-const history=require("connect-history-api-fallback");
+const history = require("connect-history-api-fallback");
 
 const app = express();
-app.use(history({index:"/index.html"}));
+app.use(history({ index: "/index.html" }));
 
-app.get('/api/parts', (req, res) =>
+app.get("/api/parts", (req, res) =>
   res.send({
     heads: [
       {
@@ -16,16 +16,17 @@ app.get('/api/parts', (req, res) =>
         title: "Large Cyclops",
         src: "/api/images/head-big-eye.png",
         type: "heads",
-        cost: 1225.5
+        cost: 1225.5,
       },
       {
         id: 2,
-        description: "A friendly robot head with two eyes and a smile -- great for domestic use.",
+        description:
+          "A friendly robot head with two eyes and a smile -- great for domestic use.",
         title: "Friendly",
         src: "/api/images/head-friendly.png",
         cost: 945.0,
         type: "heads",
-        onSale: true
+        onSale: true,
       },
       {
         id: 3,
@@ -34,16 +35,15 @@ app.get('/api/parts', (req, res) =>
         title: "Shredder",
         src: "/api/images/head-shredder.png",
         type: "heads",
-        cost: 1275.5
+        cost: 1275.5,
       },
       {
         id: 4,
-        description:
-          "A simple single-eyed head -- simple and inexpensive.",
+        description: "A simple single-eyed head -- simple and inexpensive.",
         title: "Small Cyclops",
         src: "/api/images/head-single-eye.png",
         type: "heads",
-        cost: 750.0
+        cost: 750.0,
       },
       {
         id: 5,
@@ -52,25 +52,27 @@ app.get('/api/parts', (req, res) =>
         title: "Surveillance",
         src: "/api/images/head-surveillance.png",
         type: "heads",
-        cost: 1255.5
-      }
+        cost: 1255.5,
+      },
     ],
     arms: [
       {
         id: 1,
-        description: "An articulated arm with a claw -- great for reaching around corners or working in tight spaces.",
+        description:
+          "An articulated arm with a claw -- great for reaching around corners or working in tight spaces.",
         title: "Articulated",
         src: "/api/images/arm-articulated-claw.png",
         type: "arms",
-        cost: 275
+        cost: 275,
       },
       {
         id: 2,
-        description: "An arm with two independent claws -- great when you need an extra hand. Need four hands? Equip your bot with two of these arms.",
+        description:
+          "An arm with two independent claws -- great when you need an extra hand. Need four hands? Equip your bot with two of these arms.",
         title: "Two Clawed",
         src: "/api/images/arm-dual-claw.png",
         type: "arms",
-        cost: 285
+        cost: 285,
       },
       {
         id: 3,
@@ -78,16 +80,17 @@ app.get('/api/parts', (req, res) =>
         title: "Grabber",
         src: "/api/images/arm-grabber.png",
         type: "arms",
-        cost: 205.5
+        cost: 205.5,
       },
       {
         id: 4,
-        description: "An arm with a propeller -- good for propulsion or as a cooling fan.",
+        description:
+          "An arm with a propeller -- good for propulsion or as a cooling fan.",
         title: "Propeller",
         src: "/api/images/arm-propeller.png",
         type: "arms",
         cost: 230,
-        onSale: true
+        onSale: true,
       },
       {
         id: 5,
@@ -95,17 +98,18 @@ app.get('/api/parts', (req, res) =>
         title: "Stubby Claw",
         src: "/api/images/arm-stubby-claw.png",
         type: "arms",
-        cost: 125
-      }
+        cost: 125,
+      },
     ],
     torsos: [
       {
         id: 1,
-        description: "A torso that can bend slightly at the waist and equiped with a heat guage.",
+        description:
+          "A torso that can bend slightly at the waist and equiped with a heat guage.",
         title: "Flexible Gauged",
         src: "/api/images/torso-flexible-gauged.png",
         type: "torsos",
-        cost: 1575
+        cost: 1575,
       },
       {
         id: 2,
@@ -113,7 +117,7 @@ app.get('/api/parts', (req, res) =>
         title: "Gauged",
         src: "/api/images/torso-gauged.png",
         type: "torsos",
-        cost: 1385
+        cost: 1385,
       },
       {
         id: 2,
@@ -122,8 +126,8 @@ app.get('/api/parts', (req, res) =>
         src: "/api/images/torso-pouch.png",
         type: "torsos",
         cost: 785,
-        onSale: true
-      }
+        onSale: true,
+      },
     ],
     bases: [
       {
@@ -132,7 +136,7 @@ app.get('/api/parts', (req, res) =>
         title: "Double Wheeled",
         src: "/api/images/base-double-wheel.png",
         type: "bases",
-        cost: 895
+        cost: 895,
       },
       {
         id: 2,
@@ -140,15 +144,16 @@ app.get('/api/parts', (req, res) =>
         title: "Rocket",
         src: "/api/images/base-rocket.png",
         type: "bases",
-        cost: 1520.5
+        cost: 1520.5,
       },
       {
         id: 3,
-        description: "A single-wheeled base with an accelerometer capable of higher speeds and navigating rougher terrain than the two-wheeled variety.",
+        description:
+          "A single-wheeled base with an accelerometer capable of higher speeds and navigating rougher terrain than the two-wheeled variety.",
         title: "Single Wheeled",
         src: "/api/images/base-single-wheel.png",
         type: "bases",
-        cost: 1190.5
+        cost: 1190.5,
       },
       {
         id: 4,
@@ -156,28 +161,28 @@ app.get('/api/parts', (req, res) =>
         title: "Spring",
         src: "/api/images/base-spring.png",
         type: "bases",
-        cost: 1190.5
+        cost: 1190.5,
       },
       {
         id: 5,
-        description: "An inexpensive three-wheeled base. only capable of slow speeds and can only function on smooth surfaces.",
+        description:
+          "An inexpensive three-wheeled base. only capable of slow speeds and can only function on smooth surfaces.",
         title: "Triple Wheeled",
         src: "/api/images/base-triple-wheel.png",
         type: "bases",
-        cost: 700.5
-      }
-    ]
+        cost: 700.5,
+      },
+    ],
   })
 );
 
-app.post('/api/cart', (req, res) => 
+app.post("/api/cart", (req, res) =>
   setTimeout(() => res.status(201).send(), 800)
 );
 
-app.post('/api/sign-in', (req, res) => res.status(200).send());
+app.post("/api/sign-in", (req, res) => res.status(200).send());
 
-app.use('/api/images', express.static('images'));
-app.use("/",express.static("dist",{index:'index.html'}));
+app.use("/api/images", express.static("images"));
+app.use("/", express.static("dist", { index: "index.html" }));
 
-app.listen(8081, () => console.log('Server listening on port 8081!'));
-
+app.listen(8081, () => console.log("Server listening on port 8081!"));
